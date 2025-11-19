@@ -21,17 +21,18 @@ func InputUser(scanner *bufio.Scanner) ([]int, error) {
 	return slise, nil
 }
 
+// SortSlices сортировка слайсов
 func SortSlices(sl1, sl2 []int) []int {
 	slMap := make(map[int]int, len(sl1))
 
-	for _, v := range sl1 {
+	for _, v := range sl2 {
 		slMap[v]++
 	}
 
 	slRes := make([]int, 0, len(sl1))
-	for _, v := range sl2 {
+	for _, v := range sl1 {
 		if slMap[v] > 0 {
-			slRes = append(slRes, slMap[v])
+			slRes = append(slRes, v)
 			slMap[v]--
 		}
 	}
@@ -39,10 +40,12 @@ func SortSlices(sl1, sl2 []int) []int {
 	return slRes
 }
 
+// OutoutRes вывод результата и запрос на продолжение
 func OutoutRes(sl []int, scanner *bufio.Scanner) (bool, error) {
 	for _, v := range sl {
 		fmt.Printf("%d ", v)
 	}
+	fmt.Println()
 
 	fmt.Print("Хотите продолжить? [y/n]: ")
 	for {
