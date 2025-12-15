@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_SortSlices(t *testing.T) {
+func TestSortSlices(t *testing.T) {
 	tests := []struct {
 		name string
 		sl1  []int
