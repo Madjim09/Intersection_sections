@@ -41,7 +41,7 @@ func SortSlices(sl1, sl2 []int) []int {
 }
 
 // OutoutRes вывод результата и запрос на продолжение
-func OutoutRes(sl []int, scanner *bufio.Scanner) (bool, error) {
+func OutputRes(sl []int, scanner *bufio.Scanner) (bool, error) {
 	if len(sl) == 0 {
 		fmt.Print("Empty intersection")
 	} else {

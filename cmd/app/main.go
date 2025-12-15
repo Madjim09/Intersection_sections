@@ -10,29 +10,27 @@ import (
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	flag := true
+	isActive := true
 
-	for flag {
+	for isActive {
 		fmt.Print("Введите первый слайс: ")
 		sl1, err := util.InputUser(scanner)
 
 		if err != nil {
-			err = fmt.Errorf("ошибка ввода: %w", err)
-			fmt.Println(err)
+			fmt.Println("Ошибка ввода:", err)
 		}
 
 		fmt.Print("Введите второй слайс: ")
 		sl2, err := util.InputUser(scanner)
 
 		if err != nil {
-			err = fmt.Errorf("ошибка ввода: %w", err)
-			fmt.Println(err)
+			fmt.Println("Ошибка ввода:", err)
 		}
 
 		result := util.SortSlices(sl1, sl2)
 
 		fmt.Print("Результат: ")
-		flag, err = util.OutoutRes(result, scanner)
+		isActive, err = util.OutputRes(result, scanner)
 
 		if err != nil {
 			err = fmt.Errorf("ошибка ввода: %w", err)
