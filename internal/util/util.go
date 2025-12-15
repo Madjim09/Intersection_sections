@@ -23,7 +23,7 @@ func InputUser(scanner *bufio.Scanner) ([]int, error) {
 
 // SortSlices сортировка слайсов
 func SortSlices(sl1, sl2 []int) []int {
-	slMap := make(map[int]int, len(sl1))
+	slMap := make(map[int]int, len(sl2))
 
 	for _, v := range sl2 {
 		slMap[v]++
